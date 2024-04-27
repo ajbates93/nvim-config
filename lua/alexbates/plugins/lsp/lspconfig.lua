@@ -69,6 +69,10 @@ return {
 
 				opts.desc = "Restart LSP"
 				keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+
+				-- this should go somewhere else
+				opts.desc = "Git (Neogit) toggle"
+				keymap.set("n", "<leader>gc", ":Neogit<CR>", opts) -- toggle neogit panel
 			end,
 		})
 
