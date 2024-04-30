@@ -1,9 +1,8 @@
 return {
-	"shaunsingh/nord.nvim",
+	"catppuccin/nvim",
+	name = "catppuccin",
 	priority = 1000,
 	config = function()
-		vim.g.nord_contrast = true
-		vim.g.nord_borders = true
-		vim.cmd([[colorscheme nord]])
+		vim.cmd([[colorscheme catppuccin]])
 	end,
 }

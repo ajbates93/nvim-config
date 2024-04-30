@@ -148,6 +148,18 @@ return {
 					},
 				})
 			end,
+			["jinja_lsp"] = function()
+				lspconfig["jinja_lsp"].setup({
+					capabilities = capabilities,
+					filetypes = { "jinja", "jinja2", "html" },
+					init_options = {
+						provideCompletionItems = true,
+						provideHover = true,
+						provideDocumentation = true,
+						provideDiagnostics = true,
+					},
+				})
+			end,
 		})
 	end,
 }
