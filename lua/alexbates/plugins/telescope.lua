@@ -6,7 +6,7 @@ return {
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		"nvim-tree/nvim-web-devicons",
 		"folke/todo-comments.nvim",
-		"theprimeagen/harpoon",
+		"ThePrimeagen/harpoon",
 	},
 	config = function()
 		local telescope = require("telescope")
@@ -33,6 +33,10 @@ return {
 						["<C-q>"] = actions.send_selected_to_qflist + custom_actions.open_trouble_qflist,
 						["<C-t>"] = trouble_telescope.smart_open_with_trouble,
 					},
+				},
+				file_ignore_patterns = {
+					"node_modules",
+					"scichart@3",
 				},
 			},
 		})

@@ -21,8 +21,7 @@ return {
 				graphql = { "prettier" },
 				liquid = { "prettier" },
 				lua = { "stylua" },
-				python = { "isort", "black" },
-				jinja = { "djlint" },
+				-- jinja = { "djlint" },
 			},
 			format_on_save = {
 				lsp_fallback = true,

@@ -19,7 +19,7 @@ return {
 		local keymap = vim.keymap -- for conciseness
 
 		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-			border = "double",
+			border = "rounded",
 			title = "Documentation",
 		})
 
@@ -96,6 +96,8 @@ return {
 				lspconfig[server_name].setup(server_config)
 			end,
 			["volar"] = function()
+				local typescript_server_path = vim.fn.getcwd() .. "/node_modules/typescript/lib"
+				local typescript_server_path_exists = vim.fn.isdirectory(typescript_server_path) == 1
 				lspconfig["volar"].setup({
 					capabilities,
 					filetypes = {
@@ -109,9 +111,9 @@ return {
 						vue = {
 							hybridMode = false,
 						},
-						typescript = {
-							serverPath = vim.fn.getcwd() .. "/node_modules/typescript/lib",
-						},
+						typescript = typescript_server_path_exists and {
+							serverPath = typescript_server_path,
+						} or nil,
 					},
 				})
 			end,
@@ -158,6 +160,12 @@ return {
 						provideDocumentation = true,
 						provideDiagnostics = true,
 					},
+				})
+			end,
+			["html"] = function()
+				lspconfig["html"].setup({
+					capabilities = capabilities,
+					filetype = { "html" },
 				})
 			end,
 		})
