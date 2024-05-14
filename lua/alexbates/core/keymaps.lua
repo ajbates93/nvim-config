@@ -26,3 +26,6 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 
 keymap.set("n", "<C-j>", "3j", { noremap = true, silent = true }) -- jump down 3 lines
 keymap.set("n", "<C-k>", "3k", { noremap = true, silent = true }) -- jump up 3 lines
+
+keymap.set("n", "j", "jzz", { noremap = true, silent = true }) -- keep cursor centered when moving down
+keymap.set("n", "k", "kzz", { noremap = true, silent = true }) -- keep cursor centered when moving up

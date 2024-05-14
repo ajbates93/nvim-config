@@ -28,6 +28,7 @@ return {
 				"tsx",
 				"yaml",
 				"html",
+				"htmldjango",
 				"css",
 				"prisma",
 				"markdown",
@@ -44,6 +45,9 @@ return {
 				"query",
 				"vimdoc",
 				"c",
+				"go",
+				"gomod",
+				"gosum",
 			},
 			incremental_selection = {
 				enable = true,
