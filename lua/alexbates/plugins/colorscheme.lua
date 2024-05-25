@@ -1,8 +1,20 @@
+-- return {
+-- 	"catppuccin/nvim",
+-- 	name = "catppuccin",
+-- 	priority = 1000,
+-- 	config = function()
+-- 		vim.cmd([[colorscheme catppuccin]])
+-- 	end,
+-- }
+--
 return {
-	"catppuccin/nvim",
-	name = "catppuccin",
+	"diegoulloao/neofusion.nvim",
 	priority = 1000,
+	opts = ...,
 	config = function()
-		vim.cmd([[colorscheme catppuccin]])
+		require("neofusion").setup({
+			transparent_mode = true,
+		})
+		vim.cmd([[colorscheme neofusion]])
 	end,
 }
