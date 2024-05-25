@@ -2,7 +2,7 @@ return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
-		local harpoon = require("harpoon.mark")
+		local harpoon = require("harpoon")
 		local function truncate_branch_name(branch)
 			if not branch or branch == "" then
 				return ""
