@@ -2,6 +2,10 @@ vim.cmd("let g:netrw_liststyle = 3")
 
 local opt = vim.opt -- for conciseness
 
+-- line height
+opt.linespace = 40
+-- why isn't this working?
+
 -- line numbers
 opt.relativenumber = true
 opt.number = true

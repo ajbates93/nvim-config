@@ -38,7 +38,7 @@ return {
 		-- configure lualine with modified theme
 		lualine.setup({
 			options = {
-				theme = require("neofusion.lualine"),
+				theme = "catppuccin",
 			},
 			sections = {
 				lualine_b = {

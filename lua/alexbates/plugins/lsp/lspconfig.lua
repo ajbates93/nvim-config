@@ -20,7 +20,7 @@ return {
 
 		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 			border = "rounded",
-			title = "Documentation",
+			-- title = "Documentation",
 		})
 
 		vim.api.nvim_create_autocmd("LspAttach", {
