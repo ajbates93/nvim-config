@@ -40,6 +40,8 @@ return {
 				"pyright",
 				"jinja_lsp",
 				"gopls",
+				"elixirls",
+				"rust_analyzer",
 			},
 		})
 

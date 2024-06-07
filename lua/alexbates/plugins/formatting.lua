@@ -21,6 +21,7 @@ return {
 				graphql = { "prettier" },
 				liquid = { "prettier" },
 				lua = { "stylua" },
+				rust = { "rustfmt" },
 				-- jinja = { "djlint" },
 			},
 			format_on_save = {

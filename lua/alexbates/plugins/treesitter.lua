@@ -48,6 +48,11 @@ return {
 				"go",
 				"gomod",
 				"gosum",
+				"elixir",
+				"erlang",
+				"heex",
+				"rust",
+				"toml",
 			},
 			incremental_selection = {
 				enable = true,

@@ -13,6 +13,9 @@ return {
 		-- import mason_lspconfig plugin
 		local mason_lspconfig = require("mason-lspconfig")
 
+		local mason_path = require("mason-core.path")
+		local elixirls_path = mason_path.package_prefix("elixir-ls")
+
 		-- import cmp-nvim-lsp plugin
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
@@ -145,6 +148,44 @@ return {
 							},
 							completion = {
 								callSnippet = "Replace",
+							},
+						},
+					},
+				})
+			end,
+			["elixirls"] = function()
+				lspconfig["elixirls"].setup({
+					capabilities = capabilities,
+					cmd = { elixirls_path .. "/language_server.sh" },
+					root_dir = require("lspconfig.util").root_pattern({ "mix.exs" }),
+					server_capabilities = {
+						documentatFormattingProvider = false,
+					},
+				})
+			end,
+			["rust_analyzer"] = function()
+				local on_attach = function(client, bufnr)
+					require("completion").on_attach(client)
+				end
+
+				lspconfig["rust_analyzer"].setup({
+					capabilities = capabilities,
+					on_attach = on_attach,
+					settings = {
+						["rust-analyzer"] = {
+							imports = {
+								granularity = {
+									group = "module",
+								},
+								prefix = "self",
+							},
+							cargo = {
+								buildScripts = {
+									enable = true,
+								},
+							},
+							procMacro = {
+								enable = true,
 							},
 						},
 					},
