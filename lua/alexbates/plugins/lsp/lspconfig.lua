@@ -163,34 +163,34 @@ return {
 					},
 				})
 			end,
-			["rust_analyzer"] = function()
-				local on_attach = function(client, bufnr)
-					require("completion").on_attach(client)
-				end
-
-				lspconfig["rust_analyzer"].setup({
-					capabilities = capabilities,
-					on_attach = on_attach,
-					settings = {
-						["rust-analyzer"] = {
-							imports = {
-								granularity = {
-									group = "module",
-								},
-								prefix = "self",
-							},
-							cargo = {
-								buildScripts = {
-									enable = true,
-								},
-							},
-							procMacro = {
-								enable = true,
-							},
-						},
-					},
-				})
-			end,
+			-- ["rust_analyzer"] = function()
+			-- 	local on_attach = function(client, bufnr)
+			-- 		require("completion").on_attach(client)
+			-- 	end
+			--
+			-- 	lspconfig["rust_analyzer"].setup({
+			-- 		capabilities = capabilities,
+			-- 		on_attach = on_attach,
+			-- 		settings = {
+			-- 			["rust-analyzer"] = {
+			-- 				imports = {
+			-- 					granularity = {
+			-- 						group = "module",
+			-- 					},
+			-- 					prefix = "self",
+			-- 				},
+			-- 				cargo = {
+			-- 					buildScripts = {
+			-- 						enable = true,
+			-- 					},
+			-- 				},
+			-- 				procMacro = {
+			-- 					enable = true,
+			-- 				},
+			-- 			},
+			-- 		},
+			-- 	})
+			-- end,
 			["jinja_lsp"] = function()
 				lspconfig["jinja_lsp"].setup({
 					capabilities = capabilities,
