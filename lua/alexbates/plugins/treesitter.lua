@@ -53,6 +53,7 @@ return {
 				"heex",
 				"rust",
 				"toml",
+				"astro",
 			},
 			incremental_selection = {
 				enable = true,
