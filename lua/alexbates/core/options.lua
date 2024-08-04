@@ -5,6 +5,7 @@ local opt = vim.opt -- for conciseness
 -- line height
 opt.linespace = 40
 -- why isn't this working?
+opt.textwidth = 80
 
 -- line numbers
 opt.relativenumber = true

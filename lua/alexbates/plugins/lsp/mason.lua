@@ -42,7 +42,6 @@ return {
 				"gopls",
 				"elixirls",
 				"rust_analyzer",
-				"astro-language-server",
 			},
 		})
 
